@@ -29,7 +29,7 @@ var loadFile = function(event) {
 function myFunction() {
   document.getElementById("demo").innerHTML = 'image uploaded...   please wait....'
   let image = $('#myImage').get(0);
-  let tensor = tf.browser.fromPixels(image).toFloat().div(tf.scalar(1.0)).expandDims();
+  let tensor = tf.browser.fromPixels(image).toFloat().div(tf.scalar(255.0)).expandDims();
 
 
   (async function(){
@@ -58,8 +58,8 @@ else{
 <center>
   <h5>Detect metastasis in patches</h5>
 <br><br>
-<img id="myImage" style="width:96px; height:96px" src="https://i.pinimg.com/originals/c9/4e/c8/c94ec8295d677ad20c26ef2d56c1f111.jpg"/><br><br><br>
-<input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)"><br><br><br>
+<img id="myImage" src="image1.jpg"/><br><br><br>
+<input type="file" style='width:96px;height:96px;'  accept="image/*" name="image" id="file"  onchange="loadFile(event)"><br><br><br>
 <button onclick="myFunction()">Predict</button><br><br><br>
 <p id="demo"></p>
 </center>
