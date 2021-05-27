@@ -25,7 +25,7 @@ var loadFile = function(event) {
   model = await tf.loadLayersModel('model/model.json');
 })();
 
-
+console.log('did')
 function myFunction() {
   document.getElementById("demo").innerHTML = 'image uploaded...   please wait....'
   let image = $('#myImage').get(0);
