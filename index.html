@@ -30,6 +30,7 @@ function myFunction() {
   document.getElementById("demo").innerHTML = 'image uploaded...   please wait....'
   let image = $('#myImage').get(0);
   let tensor = tf.browser.fromPixels(image).toFloat().expandDims();
+console.log(tensor)
 
 
   (async function(){
@@ -37,12 +38,8 @@ function myFunction() {
 console.log(predictions)
 
 console.log(predictions[0])
-if(predictions[0] >0.5){
-  document.getElementById("demo").innerHTML = 'metastasis detected with probability ' +  predictions[0]*100 + '%';
-}
-else{
-  document.getElementById("demo").innerHTML = 'metastasis not detected with probability ' +  1 - predictions[0]*100 + '%'
-}
+
+
 })();
   
 
