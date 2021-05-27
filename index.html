@@ -30,14 +30,12 @@ function myFunction() {
   document.getElementById("demo").innerHTML = 'image uploaded...   please wait....'
   let image = $('#myImage').get(0);
   let tensor = tf.browser.fromPixels(image).toFloat().expandDims();
-console.log(tensor)
 
 
   (async function(){
   let predictions = await model.predict(tensor).data();
-console.log(predictions)
 
-console.log(predictions[0])
+console.log(predictions[0]);
 
 
 })();
